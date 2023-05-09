@@ -10,12 +10,15 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            Color.blue.ignoresSafeArea()
+            
+            Color(red: 32 / 255, green: 70 / 255, blue: 207 / 255)
+                .ignoresSafeArea()
             VStack {
                     Image("Font bianco app")
                     .resizable()
                     .frame(width: 300, height: 70)
                     .offset(y: -250)
+                
                 Button {} label: {
                     Text("Welcome")
                         .padding()
