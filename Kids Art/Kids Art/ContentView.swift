@@ -11,13 +11,14 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Color.blue.ignoresSafeArea()
-            VStack(alignment: .center) {
+            VStack {
                     Image("Font bianco app")
                     .resizable()
                     .frame(width: 300, height: 70)
                     .offset(y: -250)
-                Button("Welcome") {
-                    
+                Button {} label: {
+                    Text("Welcome")
+                        .padding()
                 }
                 .tint(.white)
                 .buttonStyle(.borderedProminent)
@@ -25,6 +26,7 @@ struct ContentView: View {
                 .foregroundColor(.black)
                 .offset(y: 250)
                 .font(.system(size: 24))
+                
             }
         }
     }
