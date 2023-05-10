@@ -20,25 +20,7 @@ struct HomeView: View {
                 Color(red: 211 / 255, green: 216 / 255, blue: 232 / 255)
                     .ignoresSafeArea()
                 
-                
-                VStack{
-                    
-                    //THIS IS NOT A FUNCTIONING SEARCH BAR
-                    Capsule()
-                        .fill(Color(red: 250 / 255, green: 250 / 255, blue: 250 / 255))
-                        .frame(width: 262, height: 53)
-                        .overlay(
-                            HStack{
-                                Image(systemName: "magnifyingglass")
-                                    .foregroundColor(Color(red: 158 / 255, green: 158 / 255, blue: 158 / 255))
-                                
-                                Text("What are you looking for?")
-                                    .foregroundColor(Color(red: 158 / 255, green: 158 / 255, blue: 158 / 255))
-                            })
-                        .padding(30)
-                    
-                    
-                    
+                VStack {
                     Circle()
                         .fill(Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255))
                         .frame(width: 98, height: 98)
@@ -48,6 +30,9 @@ struct HomeView: View {
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
                     
+                    //The searchable modifier makes the search bar functional, needs to be adjusted the design based on the Figma prototype
+                    Text("")
+                        .searchable(text: $searchText, prompt: "What are you looking for?")
                     
                     HStack(){
                         Rectangle()
@@ -56,12 +41,21 @@ struct HomeView: View {
                             .cornerRadius(10)
                             .overlay(
                                 VStack {
-                                    Image(systemName: "binoculars.fill")
-                                        .resizable()
-                                        .frame(width: 45.93, height: 35)
-                                        .foregroundColor(.white)
-                                        
-                                    Text("Explore")
+                                    //Added a navigation link both for the emoji symbol and the "label", I've done it for each section (excluded the profile section that needs to be reworked)
+                                    NavigationLink {
+                                        ExploreView()
+                                    } label: {
+                                        Image(systemName: "binoculars.fill")
+                                            .resizable()
+                                            .frame(width: 45.93, height: 35)
+                                            .foregroundColor(.white)
+                                    }
+                                    
+                                    NavigationLink {
+                                        ExploreView()
+                                    } label: {
+                                        Text("Explore")
+                                    }
                                         .font(.system(size : 12.32))
                                         .foregroundColor(.white)
                                 })
@@ -72,17 +66,22 @@ struct HomeView: View {
                             .cornerRadius(10)
                             .overlay(
                                 VStack {
-                                    Text("🔥")
-                                        .font(.system(size : 53.37))
-                                    
-                                        
-                                    Text("Daily Challenge")
-                                        .font(.system(size : 12.32))
-                                        .foregroundColor(.white)
+                                    NavigationLink {
+                                        DailyChallengeView()
+                                    } label: {
+                                        Text("🔥")
+                                            .font(.system(size : 53.37))
+                                    }
+                                    NavigationLink {
+                                        DailyChallengeView()
+                                    } label: {
+                                        Text("Daily Challenge")
+                                            .font(.system(size : 12.32))
+                                            .foregroundColor(.white)
+                                    }
                                 })
                     }
             
-                    
                     Rectangle()
                         .fill(.white)
                         .frame(width: 198, height: 1)
@@ -93,17 +92,23 @@ struct HomeView: View {
                         .cornerRadius(10)
                         .overlay(
                             VStack {
+                                NavigationLink {
+                                    FriendsView()
+                                } label: {
+                                    Text("Your Friends' Drawings")
+                                        .font(.system(size : 12.32))
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.white)
+                                }
                                 
-                                Text("Your Friends' Drawings")
-                                    .font(.system(size : 12.32))
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.white)
-                                    
-                                
-                                Text("🧑🏼‍🎨🧑🏾‍🎨👩🏽‍🎨👩🏻‍🎨")
-                                    .font(.system(size : 50))
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.white)
+                                NavigationLink {
+                                    FriendsView()
+                                } label: {
+                                    Text("🧑🏼‍🎨🧑🏾‍🎨👩🏽‍🎨👩🏻‍🎨")
+                                        .font(.system(size : 50))
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.white)
+                                }
                             })
                     
                     Rectangle()
@@ -115,19 +120,12 @@ struct HomeView: View {
                         .frame(width: 254.25, height: 104.15)
                         .cornerRadius(10)
                     
-                    
                     Spacer()
-                    
-                    
-                        
-                    
                 }
-                
             }
             
             VStack{
                 HStack{
-                    
                     Text("Choose a Painting")
                         .fontWeight(.semibold)
                         .padding(40)
@@ -138,19 +136,9 @@ struct HomeView: View {
                 
                 Divider()
                     .frame(width: 783)
-                
                 Spacer()
                 
             }
-            
-            
-        
-                
-                    
-                
-                
-           
-    
         }
     }
 }

@@ -10,26 +10,28 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            
             Color(red: 32 / 255, green: 70 / 255, blue: 207 / 255)
                 .ignoresSafeArea()
+            
             VStack {
                     Image("Font bianco app")
                     .resizable()
                     .frame(width: 300, height: 70)
                     .offset(y: -250)
                 
-                Button {} label: {
+                //To be fixed, idk why but the link doesn't bring you to the home page
+                NavigationLink {
+                    HomeView()
+                } label: {
                     Text("Welcome")
-                        .padding()
                 }
+                .padding()
                 .tint(.white)
                 .buttonStyle(.borderedProminent)
                 .cornerRadius(50)
                 .foregroundColor(.black)
                 .offset(y: 250)
                 .font(.system(size: 24))
-                
             }
         }
     }
