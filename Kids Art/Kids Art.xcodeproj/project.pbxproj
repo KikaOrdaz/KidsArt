@@ -18,6 +18,7 @@
 		3376E14D2A0BDA1D005C3E1C /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376E14C2A0BDA1D005C3E1C /* FriendsView.swift */; };
 		3376E14F2A0BDA33005C3E1C /* DailyChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376E14E2A0BDA33005C3E1C /* DailyChallengeView.swift */; };
 		33BCB8B52A0A33A1001CFB6D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BCB8B42A0A33A1001CFB6D /* HomeView.swift */; };
+		671607952A0C596500E8F70A /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671607942A0C596500E8F70A /* Artwork.swift */; };
 		6741E5BE2A0BF3260033ABA8 /* registrationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6741E5BD2A0BF3260033ABA8 /* registrationPage.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		3376E14C2A0BDA1D005C3E1C /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 		3376E14E2A0BDA33005C3E1C /* DailyChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallengeView.swift; sourceTree = "<group>"; };
 		33BCB8B42A0A33A1001CFB6D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		671607942A0C596500E8F70A /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		6741E5BD2A0BF3260033ABA8 /* registrationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registrationPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				3376E1482A0BD9DE005C3E1C /* ExploreView.swift */,
 				332EC4D92A094D8400C1AEE0 /* ContentView.swift */,
 				33BCB8B42A0A33A1001CFB6D /* HomeView.swift */,
+				671607942A0C596500E8F70A /* Artwork.swift */,
 				3376E14E2A0BDA33005C3E1C /* DailyChallengeView.swift */,
 				332EC4DB2A094D8600C1AEE0 /* Assets.xcassets */,
 				332EC4DD2A094D8600C1AEE0 /* Kids_Art.entitlements */,
@@ -276,6 +279,7 @@
 			files = (
 				3376E14D2A0BDA1D005C3E1C /* FriendsView.swift in Sources */,
 				33BCB8B52A0A33A1001CFB6D /* HomeView.swift in Sources */,
+				671607952A0C596500E8F70A /* Artwork.swift in Sources */,
 				332EC4DA2A094D8400C1AEE0 /* ContentView.swift in Sources */,
 				3376E1492A0BD9DE005C3E1C /* ExploreView.swift in Sources */,
 				3376E14F2A0BDA33005C3E1C /* DailyChallengeView.swift in Sources */,

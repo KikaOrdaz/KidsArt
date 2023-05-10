@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExploreView: View {
+    //To do: drop a list with the paintings' titles
     @State private var searchText = ""
     
     var body: some View {
