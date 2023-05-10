@@ -36,9 +36,6 @@ struct HomeView: View {
                     
                     HStack(){
                         Rectangle()
-                            .fill(Color(red: 0 / 255, green: 122 / 255, blue: 255 / 255))
-                            .frame(width: 123, height: 106.45)
-                            .cornerRadius(10)
                             .overlay(
                                 VStack {
                                     //Added a navigation link both for the emoji symbol and the "label", I've done it for each section (excluded the profile section that needs to be reworked)
