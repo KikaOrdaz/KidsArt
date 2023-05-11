@@ -22,7 +22,7 @@ struct ContentView: View {
                   
                     
                     NavigationLink {
-                         HomeView()
+                        DashboardView()
                      } label: {
                          Capsule()
                              .fill(.white)

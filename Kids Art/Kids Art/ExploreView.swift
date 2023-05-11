@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ExploreView: View {
     var body: some View {
-        Text("Explore Section!")
+        
+        
+        NavigationStack{
+            Text("Explore Section!")
+        }
     }
 }
 
