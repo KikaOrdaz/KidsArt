@@ -26,7 +26,7 @@ struct DashboardView: View {
                     
                     
                     NavigationLink{
-                        HomeView()
+                        DrawingView()
                     } label: {
                         Rectangle()
                             .fill(Color(red: 255 / 255, green: 149 / 255, blue: 0 / 255))

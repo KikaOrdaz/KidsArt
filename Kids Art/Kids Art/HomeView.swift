@@ -26,7 +26,7 @@ struct HomeView: View {
             Divider()
                 .frame(width: 783)
             Spacer()
-            
+                .navigationBarBackButtonHidden(true)
             
             Text("Don't really know what to do with this page")
             
