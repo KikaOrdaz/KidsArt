@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var kidData: [String : String] = UserDefaults.standard.dictionary(forKey: "label") as? [String : String] ?? [:]
+    
     var body: some View {
         NavigationStack{
             ZStack {
@@ -22,7 +24,7 @@ struct ContentView: View {
                   
                     
                     NavigationLink {
-                        DashboardView()
+                        WelcomeRegisterView()
                      } label: {
                          Capsule()
                              .fill(.white)
