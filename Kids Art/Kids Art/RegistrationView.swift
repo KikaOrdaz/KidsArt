@@ -47,10 +47,9 @@ struct RegistrationView: View {
             
             
             Text(username)
-            //UserDefaults.standard.set(, forKey: "la")
+          
             
         }
-        
     }
 }
 

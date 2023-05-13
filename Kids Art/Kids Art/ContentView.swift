@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var kidData: [String : String] = UserDefaults.standard.dictionary(forKey: "label") as? [String : String] ?? [:]
-    
+
     var body: some View {
+       
+        
         NavigationStack{
             ZStack {
                 Color(red: 32 / 255, green: 70 / 255, blue: 207 / 255)
