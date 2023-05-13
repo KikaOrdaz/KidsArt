@@ -8,11 +8,9 @@
 import SwiftUI
 import PencilKit
 
-import SwiftUI
-import PencilKit
-
 struct DrawingView: View {
-
+    @State private var zoomScale: CGFloat = 1
+    
     @State var rendition: Rendition?
     @State private var canvasView = PKCanvasView()
     @State private var isSharing = false
@@ -21,7 +19,16 @@ struct DrawingView: View {
         NavigationView {
             ZStack {
                 Image("1.3")
+                    .scaleEffect(zoomScale)
+                    .gesture(MagnificationGesture()
+                        .onChanged {
+                            value in
+                            self.zoomScale = value.magnitude
+                        }
+                    )
+                
                 CanvasView(canvasView: $canvasView, onSaved: saveDrawing)
+                    
                     .padding(20.0)
                     .navigationBarTitle(Text("Draw your painting"), displayMode: .inline)
                     .navigationBarItems(
@@ -70,6 +77,12 @@ private extension DrawingView {
     func shareDrawing() {
         if rendition != nil {
             isSharing = true
+        }
+    }
+    
+    func resetImageState() {
+        withAnimation(.interactiveSpring()) {
+            zoomScale = 1
         }
     }
 }
