@@ -14,6 +14,8 @@ struct ExploreView: View {
     var body: some View {
         
         VStack{
+            Color("Background")
+                .edgesIgnoringSafeArea(.all)
             HStack{
                 Text("Choose a Painting")
                     .fontWeight(.semibold)
@@ -136,5 +138,8 @@ struct ExploreView: View {
 struct ExploreView_Previews: PreviewProvider {
     static var previews: some View {
         ExploreView()
+        
+        ExploreView()
+            .environment(\.colorScheme, .dark)
     }
 }
