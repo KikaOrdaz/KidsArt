@@ -130,7 +130,6 @@ struct ExploreView: View {
                 }
             }
         }
-        .navigationBarBackButtonHidden(false)
     }
 }
 

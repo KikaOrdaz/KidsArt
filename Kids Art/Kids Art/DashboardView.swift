@@ -128,7 +128,7 @@ struct DashboardView: View {
                 }
             }
         } detail: {
-            HomeView()
+            ExploreView()
         }
         .navigationBarBackButtonHidden(true)
 

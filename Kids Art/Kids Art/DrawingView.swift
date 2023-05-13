@@ -9,7 +9,7 @@ import SwiftUI
 import PencilKit
 
 struct DrawingView: View {
-    @State private var zoomScale: CGFloat = 1
+    @State private var zoomScale: CGFloat = 1.5
     
     @State var rendition: Rendition?
     @State private var canvasView = PKCanvasView()
