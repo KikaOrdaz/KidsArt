@@ -36,60 +36,101 @@ struct ExploreView: View {
             HStack {
                 //Paintings available to be coloured
                 //I have to create a struct for images like the professors app, so I can make the code cleaner and manage all the future paintings by 1 single struct and not changing manually everytime
-                Image("1")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 300,height: 200)
-                    .cornerRadius(25)
+                NavigationLink {
+                    DrawingView()
+                } label: {
+                    Image("1")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 300,height: 200)
+                        .cornerRadius(25)
+                }
                 
-                Image("7")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 300,height: 200)
-                    .cornerRadius(25)
+                NavigationLink {
+                    DrawingView()
+                } label: {
+                    Image("7")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 300,height: 200)
+                        .cornerRadius(25)
+                }
                 
-                Image("6")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 300,height: 200)
-                    .cornerRadius(25)
+                NavigationLink {
+                    DrawingView()
+                } label: {
+                    Image("6")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 300,height: 200)
+                        .cornerRadius(25)
+                }
             }
             HStack {
-                Image("5")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 300,height: 200)
-                    .cornerRadius(25)
-                Image("10")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 300,height: 200)
-                    .cornerRadius(25)
-                Image("2")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 300,height: 200)
-                    .cornerRadius(25)
+                NavigationLink {
+                    DrawingView()
+                } label: {
+                    Image("5")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 300,height: 200)
+                        .cornerRadius(25)
+                }
+                
+                NavigationLink {
+                    DrawingView()
+                } label: {
+                    Image("10")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 300,height: 200)
+                        .cornerRadius(25)
+                }
+                
+                NavigationLink {
+                    DrawingView()
+                } label: {
+                    Image("2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 300,height: 200)
+                        .cornerRadius(25)
+                }
             }
+            
             HStack {
-                Image("8")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 300,height: 200)
-                    .cornerRadius(25)
-                Image("4")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 300,height: 200)
-                    .cornerRadius(25)
-                Image("9")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 300,height: 200)
-                    .cornerRadius(25)
+                NavigationLink {
+                    DrawingView()
+                } label: {
+                    Image("8")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 300,height: 200)
+                        .cornerRadius(25)
+                }
+                
+                NavigationLink {
+                    DrawingView()
+                } label: {
+                    Image("4")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 300,height: 200)
+                        .cornerRadius(25)
+                }
+                
+                NavigationLink {
+                    DrawingView()
+                } label: {
+                    Image("9")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 300,height: 200)
+                        .cornerRadius(25)
+                }
             }
         }
-        
+        .navigationBarBackButtonHidden(false)
     }
 }
 

@@ -11,24 +11,18 @@ struct WelcomeRegisterView: View {
     //TO DO: insert a check to not allow empty usernames
     @State private var username = ""
     @State private var showingAlert = false
-
+    
     private let clickableColor : Color = Color(red: 50 / 255, green: 50 / 255, blue: 50 / 255)
     private let notClickableColor : Color = Color(red: 120 / 255, green: 120 / 255, blue: 120 / 255)
-
-    
     
     var body: some View {
         
         let infos : [pageInfo] = [pageInfo(buttonLabel: "Choose your favorite painting", imageName: "Choose", capsuleColor: notClickableColor),
-                                          pageInfo(buttonLabel: "Color your favorite painting", imageName: "Paint", capsuleColor: notClickableColor),
-                                          pageInfo(buttonLabel: "Share it with your friends", imageName: "Friends", capsuleColor: notClickableColor),
-                                          pageInfo(buttonLabel: "Register", imageName: "", capsuleColor: clickableColor)]
-    
+                                  pageInfo(buttonLabel: "Color your favorite painting", imageName: "Paint", capsuleColor: notClickableColor),
+                                  pageInfo(buttonLabel: "Share it with your friends", imageName: "Friends", capsuleColor: notClickableColor),
+                                  pageInfo(buttonLabel: "Register", imageName: "", capsuleColor: clickableColor)]
         
-    
         NavigationStack {
-            
-            
             VStack{
                 TabView{
                     ForEach(infos) {
@@ -42,7 +36,7 @@ struct WelcomeRegisterView: View {
                                     DashboardView()
                                 } label: {
                                     
-                                 Capsule()
+                                    Capsule()
                                         .fill(item.capsuleColor)
                                         .frame(width: 520, height: 93)
                                         .overlay(
@@ -52,7 +46,6 @@ struct WelcomeRegisterView: View {
                                                 .foregroundColor(.white))
                                 }
                                 
-                            
                             } else {
                                 Image(item.imageName)
                                     .resizable()
@@ -60,16 +53,14 @@ struct WelcomeRegisterView: View {
                                     .padding(40)
                                 
                                 Capsule()
-                                       .fill(item.capsuleColor)
-                                       .frame(width: 520, height: 93)
-                                       .overlay(
-                                           Text(item.buttonLabel)
-                                               .font(.system(size: 20))
-                                               .fontWeight(.bold)
-                                               .foregroundColor(.white))
+                                    .fill(item.capsuleColor)
+                                    .frame(width: 520, height: 93)
+                                    .overlay(
+                                        Text(item.buttonLabel)
+                                            .font(.system(size: 20))
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.white))
                             }
-                            
-                        
                         }
                     }
                     
