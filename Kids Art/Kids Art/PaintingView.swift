@@ -8,36 +8,39 @@
 import SwiftUI
 import PencilKit
 
+import SwiftUI
+import PencilKit
+
 struct DrawingView: View {
+
     @State var rendition: Rendition?
     @State private var canvasView = PKCanvasView()
     @State private var isSharing = false
     
     var body: some View {
         NavigationView {
-          ZStack {
-            CanvasView(canvasView: $canvasView, onSaved: saveDrawing)
-              Image("1.1")
-              .padding(20.0)
-            .background(Color.gray)
-            .navigationBarTitle(Text("Draw your painting"), displayMode: .inline)
-            .navigationBarItems(
-              trailing: HStack {
-                Button(action: shareDrawing) {
-                  Image(systemName: "square.and.arrow.up")
-                }.sheet(isPresented: $isSharing) {
-                  ShareSheet(
-                    activityItems: [rendition?.image as Any],
-                    excludedActivityTypes: [])
-                }
-                Button(action: restoreDrawing) {
-                  Image(systemName: "arrow.uturn.left")
-                }
-                Button(action: deleteDrawing) {
-                  Image(systemName: "trash")
-                }
-              })
-          }
+            ZStack {
+                Image("1.3")
+                CanvasView(canvasView: $canvasView, onSaved: saveDrawing)
+                    .padding(20.0)
+                    .navigationBarTitle(Text("Draw your painting"), displayMode: .inline)
+                    .navigationBarItems(
+                        trailing: HStack {
+                            Button(action: shareDrawing) {
+                                Image(systemName: "square.and.arrow.up")
+                            }.sheet(isPresented: $isSharing) {
+                                ShareSheet(
+                                    activityItems: [rendition?.image as Any],
+                                    excludedActivityTypes: [])
+                            }
+                            Button(action: restoreDrawing) {
+                                Image(systemName: "arrow.uturn.left")
+                            }
+                            Button(action: deleteDrawing) {
+                                Image(systemName: "trash")
+                            }
+                        })
+            }
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
@@ -45,13 +48,13 @@ struct DrawingView: View {
 private extension DrawingView {
     
     func saveDrawing() {
-      let image = canvasView.drawing.image(
-        from: canvasView.bounds, scale: UIScreen.main.scale)
-      let rendition = Rendition(
-        title: "Best Drawing",
-        drawing: canvasView.drawing,
-        image: image)
-      self.rendition = rendition
+        let image = canvasView.drawing.image(
+            from: canvasView.bounds, scale: UIScreen.main.scale)
+        let rendition = Rendition(
+            title: "Best Drawing",
+            drawing: canvasView.drawing,
+            image: image)
+        self.rendition = rendition
     }
     
     func deleteDrawing() {
@@ -59,18 +62,17 @@ private extension DrawingView {
     }
     
     func restoreDrawing() {
-      if let rendition = rendition {
-        canvasView.drawing = rendition.drawing
-      }
+        if let rendition = rendition {
+            canvasView.drawing = rendition.drawing
+        }
     }
     
     func shareDrawing() {
-      if rendition != nil {
-        isSharing = true
-      }
+        if rendition != nil {
+            isSharing = true
+        }
     }
 }
-
 
 struct DrawingView_Previews: PreviewProvider {
     static var previews: some View {
