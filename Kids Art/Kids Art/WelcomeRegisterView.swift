@@ -12,6 +12,7 @@ struct WelcomeRegisterView: View {
     @State private var username = ""
     @State private var showingAlert = false
     
+    
     private let clickableColor : Color = Color(red: 50 / 255, green: 50 / 255, blue: 50 / 255)
     private let notClickableColor : Color = Color(red: 120 / 255, green: 120 / 255, blue: 120 / 255)
     
@@ -20,7 +21,7 @@ struct WelcomeRegisterView: View {
         let infos : [pageInfo] = [pageInfo(buttonLabel: "Choose your favorite painting", imageName: "Choose", capsuleColor: notClickableColor),
                                   pageInfo(buttonLabel: "Color your favorite painting", imageName: "Paint", capsuleColor: notClickableColor),
                                   pageInfo(buttonLabel: "Share it with your friends", imageName: "Friends", capsuleColor: notClickableColor),
-                                  pageInfo(buttonLabel: "Register", imageName: "", capsuleColor: clickableColor)]
+                                  pageInfo(buttonLabel: "Start painting!", imageName: "", capsuleColor: clickableColor)]
         
         NavigationStack {
             VStack{
@@ -28,11 +29,11 @@ struct WelcomeRegisterView: View {
                     ForEach(infos) {
                         item in
                         VStack {
-                            if (item.buttonLabel == "Register") {
+                            if (item.buttonLabel == "Start painting!") {
                                 
                                 RegistrationView()
                                 
-                                NavigationLink{
+                               /* NavigationLink{
                                     DashboardView()
                                 } label: {
                                     
@@ -44,7 +45,7 @@ struct WelcomeRegisterView: View {
                                                 .font(.system(size: 20))
                                                 .fontWeight(.bold)
                                                 .foregroundColor(.white))
-                                }
+                                }*/
                                 
                             } else {
                                 Image(item.imageName)
