@@ -9,16 +9,24 @@ import SwiftUI
 
 struct DashboardView: View {
     @State private var searchText = ""
+    @AppStorage ("isDarkMode") private var isDarkMode = false
     
     var body: some View {
         
         NavigationSplitView {
             ZStack{
-                
                 Color(red: 211 / 255, green: 216 / 255, blue: 232 / 255)
                     .ignoresSafeArea()
                 
                 VStack {
+                    Picker("Theme", selection: $isDarkMode) {
+                        Text("☀️")
+                            .tag(false)
+                        Text("🌑")
+                            .tag(true)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .padding()
                     
                     NavigationLink{
                         ExploreView()

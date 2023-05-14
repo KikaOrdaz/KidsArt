@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RegistrationView: View {
     @State private var username = ""
+    @State private var savedUsername = ""
     @State private var dataDisclaimer = false
     @State private var emptyUsername = false
     
@@ -50,34 +51,37 @@ struct RegistrationView: View {
                     Alert(title: Text("Disclaimer"), message: Text("Don’t put any personal data in your nickname!"), dismissButton: .default(Text("Got it!")))
                 }
                 
-                /*NavigationLink {
+                NavigationLink {
                     DashboardView()
-                } label: {
-                    
-                }*/
-                
-                
-                Button(){
-                    UserDefaults.standard.set(username, forKey: "username")
-                    
                 } label: {
                     Capsule()
                         .fill()
                         .frame(width: 100, height: 45)
                         .overlay(
-                            Text("Save")
+                            Text("Register")
                                 .font(.system(size: 20))
                                 .fontWeight(.bold)
                                 .foregroundColor(.white))
                 }
                 .disabled(username.isEmpty)
-                
-                
+                .onAppear(perform: {
+                    getData()
+                })
             }
             
         }
     }
     
+}
+
+extension RegistrationView {
+    func saveData(){
+        UserDefaults.standard.set(self.username, forKey: "username")
+    }
+    
+    func getData(){
+        savedUsername = "Welcome: \(UserDefaults.standard.string(forKey: "username") ?? "")"
+    }
 }
 
 struct RegistrationView_Previews: PreviewProvider {
