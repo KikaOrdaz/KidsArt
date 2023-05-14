@@ -18,17 +18,11 @@ struct DrawingView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Image("1.3")
-                    .scaleEffect(zoomScale)
-                    .gesture(MagnificationGesture()
-                        .onChanged {
-                            value in
-                            self.zoomScale = value.magnitude
-                        }
-                    )
-                
+                ZoomableScrollView {
+                    Image("1.3")
+                        .scaleEffect(zoomScale)
+                }
                 CanvasView(canvasView: $canvasView, onSaved: saveDrawing)
-                    
                     .padding(20.0)
                     .navigationBarTitle(Text("Draw your painting"), displayMode: .inline)
                     .navigationBarItems(
@@ -77,12 +71,6 @@ private extension DrawingView {
     func shareDrawing() {
         if rendition != nil {
             isSharing = true
-        }
-    }
-    
-    func resetImageState() {
-        withAnimation(.interactiveSpring()) {
-            zoomScale = 1
         }
     }
 }

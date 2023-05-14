@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExploreView: View {
+    @AppStorage ("isDarkMode") private var isDarkMode = false
     //To do: drop a list with the paintings' titles
     @State private var searchText = ""
     
@@ -23,6 +24,15 @@ struct ExploreView: View {
                     .font(.system(size: 29.56))
                 
                 Spacer()
+                
+                Picker("Theme", selection: $isDarkMode) {
+                    Text("☀️")
+                        .tag(false)
+                    Text("🌑")
+                        .tag(true)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
                 
                 HStack {
                     Circle()

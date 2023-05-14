@@ -19,14 +19,9 @@ struct DashboardView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                
-                    //The searchable modifier makes the search bar functional, needs to be adjusted the design based on the Figma prototype
-                    Text("")
-                        .searchable(text: $searchText, prompt: "What are you looking for?")
-                    
                     
                     NavigationLink{
-                        DrawingView()
+                        ExploreView()
                     } label: {
                         Rectangle()
                             .fill(Color(red: 255 / 255, green: 149 / 255, blue: 0 / 255))
@@ -34,10 +29,10 @@ struct DashboardView: View {
                             .cornerRadius(10)
                             .overlay(
                                 VStack{
-                                    Text("🖌️")
+                                    Text("🗺️")
                                         .font(.system(size : 53.37))
                                     
-                                    Text("Artworks")
+                                    Text("Explore")
                                     .font(.system(size : 12.32))
                                     .foregroundColor(.white)
                                 })
@@ -53,7 +48,7 @@ struct DashboardView: View {
                     HStack(){
                         
                         NavigationLink{
-                            ExploreView()
+                            DrawingView()
                                 .navigationBarBackButtonHidden(false)
                         } label: {
                             Rectangle()
@@ -63,10 +58,10 @@ struct DashboardView: View {
                                 .overlay(
                                     VStack {
                                         //Added a navigation link both for the emoji symbol and the "label", I've done it for each section (excluded the profile section that needs to be reworked)
-                                        Text("🗺️")
+                                        Text("🖌️")
                                             .font(.system(size : 53.37))
                                         
-                                        Text("Explore")
+                                        Text("Artwork")
                                         .font(.system(size : 12.32))
                                         .fontWeight(.semibold)
                                         .foregroundColor(.white)
@@ -122,9 +117,59 @@ struct DashboardView: View {
                             .shadow(radius: 5)
                     }
                     
+                    Rectangle()
+                        .fill(.white)
+                        .frame(width: 198, height: 1)
+                    
                 
                     
-                    Spacer()
+                    NavigationLink {
+                        MyPaintingsView()
+                    } label: {
+                        Rectangle()
+                            .fill(Color(red: 234 / 255, green: 152 / 255, blue: 106 / 255))
+                            .frame(width: 254.25, height: 104.15)
+                            .cornerRadius(10)
+                            .overlay(
+                                VStack{
+                                    Text("🌄")
+                                        .font(.system(size : 50))
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.white)
+                                    Text("My Paintings")
+                                        .font(.system(size : 12.32))
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.white)
+                                })
+                            .shadow(radius: 5)
+                    }
+                    
+                    Rectangle()
+                        .fill(.white)
+                        .frame(width: 198, height: 1)
+                    
+                
+                    
+                    NavigationLink {
+                        DrawingSessionView()
+                    } label: {
+                        Rectangle()
+                            .fill(Color(red: 234 / 255, green: 152 / 255, blue: 106 / 255))
+                            .frame(width: 254.25, height: 104.15)
+                            .cornerRadius(10)
+                            .overlay(
+                                VStack{
+                                    Text("✍🏻")
+                                        .font(.system(size : 50))
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.white)
+                                    Text("Let's Draw")
+                                        .font(.system(size : 12.32))
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.white)
+                                })
+                            .shadow(radius: 5)
+                    }
                 }
             }
         } detail: {
