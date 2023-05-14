@@ -15,7 +15,7 @@ struct ContentView: View {
         NavigationStack{
             ZStack {
                 Color(red: 32 / 255, green: 70 / 255, blue: 207 / 255)
-                    .ignoresSafeArea()
+                    .edgesIgnoringSafeArea(.bottom)
                 
                 VStack {
                         Image("Font bianco app")
@@ -36,9 +36,6 @@ struct ContentView: View {
                                  .fontWeight(.semibold)
                                  .foregroundColor(.black))
                      }
-                    
-                   
-                    
                 }
             }
         }

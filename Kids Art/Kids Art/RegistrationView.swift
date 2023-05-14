@@ -21,8 +21,8 @@ struct RegistrationView: View {
                     .font(.system(size: 54.02)))
                 .padding(.top)
             Text("Enter your nickname")
-                .fontWeight(.heavy)
-                .padding(.top, 10)
+                .fontWeight(.regular)
+                .padding(.top, 25)
             Divider()
                 .frame(width: 50, height: 2)
                 .overlay(Color.blue)
@@ -34,7 +34,7 @@ struct RegistrationView: View {
             } label: {
                 TextField(text: $username, label: {
                     Text("Nickname")
-                })
+                }) .padding()
                 .multilineTextAlignment(.center)
                 .background(Color(red: 217 / 255, green: 217 / 255, blue: 217 / 255))
                 .cornerRadius(50)
@@ -43,12 +43,6 @@ struct RegistrationView: View {
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text("Disclaimer"), message: Text("Don’t put any personal data in your nickname!"), dismissButton: .default(Text("Got it!")))
                 }
-            
-            
-            
-            Text(username)
-          
-            
         }
     }
 }
