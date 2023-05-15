@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct WelcomeRegisterView: View {
-    //TO DO: insert a check to not allow empty usernames
-    @State private var username = ""
+    
     @State private var showingAlert = false
+    @AppStorage("username") private var username = ""
     
     
     private let clickableColor : Color = Color(red: 50 / 255, green: 50 / 255, blue: 50 / 255)
@@ -33,19 +33,6 @@ struct WelcomeRegisterView: View {
                                 
                                 RegistrationView()
                                 
-                               /* NavigationLink{
-                                    DashboardView()
-                                } label: {
-                                    
-                                    Capsule()
-                                        .fill(item.capsuleColor)
-                                        .frame(width: 520, height: 93)
-                                        .overlay(
-                                            Text(item.buttonLabel)
-                                                .font(.system(size: 20))
-                                                .fontWeight(.bold)
-                                                .foregroundColor(.white))
-                                }*/
                                 
                             } else {
                                 Image(item.imageName)

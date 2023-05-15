@@ -48,6 +48,7 @@ struct RegistrationView: View {
                     Alert(title: Text("Disclaimer"), message: Text("Don’t put any personal data in your nickname!"), dismissButton: .default(Text("Got it!")))
                 }
                 
+                
                 NavigationLink {
                     DashboardView()
                 } label: {
@@ -62,6 +63,7 @@ struct RegistrationView: View {
 
                 }
                 .disabled(username.isEmpty)
+                
   
             }
             

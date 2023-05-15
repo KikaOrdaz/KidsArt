@@ -2,273 +2,79 @@
 //  ProfilePageView.swift
 //  Kids Art
 //
-//  Created by Nicola Sarli on 15/05/23.
+//  Created by Maria on 12/05/23.
 //
 
 import SwiftUI
 
 struct ProfilePageView: View {
-    @State var selectedImage: String?
+
+    @AppStorage("profilepic") var selectedImage: String?
+    @AppStorage("profilecolor") var profileColor: String?
+    
+    private var availablePics = ["☃️", "🌍", "🌞", "😊", "😡", "👽",
+                                 "🎨", "🧸", "🐴", "🐬", "🌚", "🔥",
+                                 "🐵", "🦁", "🐶", "🪐", "⚽️", "🏀"]
+    
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+       ]
     
     var body: some View {
-        NavigationStack {
             VStack {
                 HStack {
                     Spacer()
-                    Button(action: {
-                        selectedImage = "monkey"
-                    }, label: {
-                        Image(selectedImage ?? "monkey")
-                            .resizable()
-                            .frame(width: 180, height: 180)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                        
-                    })
+                    
+                    Circle()
+                        .frame(width: 162, height: 162)
+                        .padding()
+                        .foregroundColor(stringToColor(string: profileColor ?? ""))
+                        .overlay(
+                            Text(selectedImage ?? "🐵")
+                                .font(.system(size: 89.29))
+                        )
+                    
                     Spacer()
                 }
+                
                 Text("Choose your pic")
                     .fontWeight(.regular)
                     .font(.system(size: 33))
+
+                Rectangle()
+                    .frame(width: 58, height: 1)
+                    .foregroundColor(.accentColor)
                 
-                HStack {
-                    Spacer()
-                    Button(action: {
+                LazyVGrid(columns: columns, spacing: 0){
+                    ForEach(availablePics, id: \.self){ pic in
+                        Button {
+                            selectedImage = pic
+                        } label: {
+                            Circle()
+                                .frame(width: 120, height: 120)
+                                .padding()
+                                .foregroundColor(stringToColor(string: profileColor ?? ""))
+                                .overlay(
+                                    Text(pic)
+                                        .font(.system(size: 60))
+                                )
                         
-                        selectedImage = "snow"
-                        
-                    }, label: {
-                        Image("snow")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    Button(action: {
-                        selectedImage = "world"
-                    }, label: {
-                        Image("world")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    Button(action: {
-                        selectedImage = "sun"
-                    }, label: {
-                        Image("sun")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    
-                    Button(action: {
-                        selectedImage = "smile"
-                    }, label: {
-                        Image("smile")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    Button(action: {
-                        selectedImage = "angry"
-                    }, label: {
-                        Image("angry")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    Button(action: {
-                        selectedImage = "alien"
-                    }, label: {
-                        Image("alien")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    
-                    Spacer()
-                }
-                HStack{
-                    
-                    Spacer()
-                    Button(action: {
-                        
-                        selectedImage = "paintboard"
-                        
-                    }, label: {
-                        Image("paintboard")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    Button(action: {
-                        selectedImage = "teddy"
-                        
-                    }, label: {
-                        Image("teddy")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    Button(action: {
-                        selectedImage = "horse"
-                        
-                    }, label: {
-                        Image("horse")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    Button(action: {
-                        selectedImage = "dolphin"
-                        
-                    }, label: {
-                        Image("dolphin")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    Button(action: {
-                        selectedImage = "moon"
-                        
-                    }, label: {
-                        Image("moon")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    Button(action: {
-                        selectedImage = "flame"
-                        
-                    }, label: {
-                        Image("flame")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    
-                    Spacer()
-                }
-                HStack{
-                    Button(action: {
-                        
-                        selectedImage = "monkey"
-                        
-                    }, label: {
-                        Image("monkey")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    Button(action: {
-                        selectedImage = "lion"
-                        
-                    }, label: {
-                        Image("lion")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    Button(action: {
-                        selectedImage = "dog"
-                        
-                    }, label: {
-                        Image("dog")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    Button(action: {
-                        selectedImage = "planet"
-                        
-                    }, label: {
-                        Image("planet")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    Button(action: {
-                        selectedImage = "soccer"
-                        
-                    }, label: {
-                        Image("soccer")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    Button(action: {
-                        selectedImage = "basketball"
-                        
-                    }, label: {
-                        Image("basketball")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color(red: 224 / 255, green: 224 / 255, blue: 224 / 255))
-                            .clipShape(Circle())
-                    })
-                    NavigationLink {
-                        ProfilePageColorView()
-                    } label: {
-                        Text("Next")
+                        }
+                       
                     }
                 }
-            }
-        }
+                
+                }
+            .frame(width: 800)
     }
 }
+
+
 
 struct ProfilePageView_Previews: PreviewProvider {
     static var previews: some View {
