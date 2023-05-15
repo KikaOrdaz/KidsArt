@@ -16,8 +16,6 @@ struct DrawingSessionView: View {
     @State private var isSharing = false
     
     var body: some View {
-        NavigationView {
-            ZStack {
                 ZoomableScrollView {
                     CanvasView(canvasView: $canvasView, onSaved: saveDrawing)
                         .padding(20.0)
@@ -38,8 +36,7 @@ struct DrawingSessionView: View {
                                 }
                             })
                 }
-            }
-        }.navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

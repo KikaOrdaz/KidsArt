@@ -9,20 +9,22 @@ import SwiftUI
 import PencilKit
 
 struct DrawingView: View {
-    @State private var zoomScale: CGFloat = 1.5
+    var image: String
     
     @State var rendition: Rendition?
     @State private var canvasView = PKCanvasView()
     @State private var isSharing = false
     
     var body: some View {
-        NavigationView {
-            ZStack {
+        NavigationStack {
                 ZoomableScrollView {
-                    Image("1.3")
-                        .scaleEffect(zoomScale)
+                    ZStack {
+                        Image(image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        CanvasView(canvasView: $canvasView, onSaved: saveDrawing)
+                    }
                 }
-                CanvasView(canvasView: $canvasView, onSaved: saveDrawing)
                     .padding(20.0)
                     .navigationBarTitle(Text("Draw your painting"), displayMode: .inline)
                     .navigationBarItems(
@@ -41,7 +43,6 @@ struct DrawingView: View {
                                 Image(systemName: "trash")
                             }
                         })
-            }
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
@@ -77,6 +78,6 @@ private extension DrawingView {
 
 struct DrawingView_Previews: PreviewProvider {
     static var previews: some View {
-        DrawingView()
+        DrawingView(image: "1.3")
     }
 }

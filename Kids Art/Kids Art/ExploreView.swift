@@ -38,108 +38,54 @@ struct ExploreView: View {
             HStack {
                 //Paintings available to be coloured
                 //I have to create a struct for images like the professors app, so I can make the code cleaner and manage all the future paintings by 1 single struct and not changing manually everytime
-                NavigationLink {
-                    DrawingView()
-                } label: {
-                    Image("1")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 300,height: 200)
-                        .cornerRadius(25)
-                }
+                Paintings(image: "1.2", colouredImage: "1")
                 
-                NavigationLink {
-                    DrawingView()
-                } label: {
-                    Image("7")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 300,height: 200)
-                        .cornerRadius(25)
-                }
+                Paintings(image: "1.3", colouredImage: "7")
                 
-                NavigationLink {
-                    DrawingView()
-                } label: {
-                    Image("6")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 300,height: 200)
-                        .cornerRadius(25)
-                }
-            }
-            HStack {
-                NavigationLink {
-                    DrawingView()
-                } label: {
-                    Image("5")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 300,height: 200)
-                        .cornerRadius(25)
-                }
-                
-                NavigationLink {
-                    DrawingView()
-                } label: {
-                    Image("10")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 300,height: 200)
-                        .cornerRadius(25)
-                }
-                
-                NavigationLink {
-                    DrawingView()
-                } label: {
-                    Image("2")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 300,height: 200)
-                        .cornerRadius(25)
-                }
+                Paintings(image: "1.16", colouredImage: "11")
             }
             
             HStack {
-                NavigationLink {
-                    DrawingView()
-                } label: {
-                    Image("8")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 300,height: 200)
-                        .cornerRadius(25)
-                }
+                Paintings(image: "1.14", colouredImage: "9")
                 
-                NavigationLink {
-                    DrawingView()
-                } label: {
-                    Image("4")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 300,height: 200)
-                        .cornerRadius(25)
-                }
+                Paintings(image: "1.15", colouredImage: "10")
                 
-                NavigationLink {
-                    DrawingView()
-                } label: {
-                    Image("9")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 300,height: 200)
-                        .cornerRadius(25)
-                }
+                Paintings(image: "1.11", colouredImage: "2")
+            }
+            
+            HStack {
+                Paintings(image: "1.17", colouredImage: "6")
+                
+                Paintings(image: "1.12", colouredImage: "3")
+                
+                Paintings(image: "1.13", colouredImage: "4")
             }
         }
     }
-}
-
-struct ExploreView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExploreView()
-        
-        ExploreView()
-            .environment(\.colorScheme, .dark)
+    
+    
+    struct ExploreView_Previews: PreviewProvider {
+        static var previews: some View {
+            ExploreView()
+            
+            ExploreView()
+                .environment(\.colorScheme, .dark)
+        }
+    }
+    
+    struct Paintings: View {
+        let image: String
+        let colouredImage: String
+        var body: some View {
+            NavigationLink {
+                DrawingView(image: image)
+            } label: {
+                Image(colouredImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 300,height: 200)
+                    .cornerRadius(25)
+            }
+        }
     }
 }
