@@ -14,8 +14,8 @@
             filePath = "Kids Art/ExploreView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "previews"
             landmarkType = "24">
             <Locations>
@@ -122,6 +122,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "69"
                   endingLineNumber = "69"
+                  offsetFromSymbolStart = "280">
+               </Location>
+               <Location
+                  uuid = "5DE43BEC-00E9-48ED-9584-8024A2246AD7 - 9e809774dea30caa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Kids_Art.ExploreView.ExploreView_Previews.previews.getter : some"
+                  moduleName = "Kids Art"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nicolasarli/Documents/GitHub/Kids%20Art/Kids%20Art/ExploreView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
                   offsetFromSymbolStart = "280">
                </Location>
             </Locations>

@@ -13,52 +13,59 @@ struct ExploreView: View {
     
     var body: some View {
         
-        VStack{
-            Color("Background")
-                .edgesIgnoringSafeArea(.all)
-            HStack{
-                Text("Choose a Painting")
-                    .fontWeight(.semibold)
-                    .padding(40)
-                    .font(.system(size: 29.56))
-                
-                Spacer()
+        NavigationStack {
+            VStack{
+                Color("Background")
+                    .edgesIgnoringSafeArea(.all)
+                HStack{
+                    Text("Choose a Painting")
+                        .fontWeight(.semibold)
+                        .padding(40)
+                        .font(.system(size: 29.56))
+                    
+                    Spacer()
+                    
+                    HStack {
+                        NavigationLink {
+                            ProfilePageView()
+                        } label: {
+                            Circle()
+                                .fill(Color(red: 245 / 255, green: 242 / 255, blue: 242 / 255))
+                                .frame(width: 98, height: 98)
+                                .overlay(Text("🐵")
+                                    .font(.system(size: 54.02)))
+                                .padding(.trailing, 50)
+                        }
+                        .navigationBarBackButtonHidden(true)
+                    }
+                }
+                Divider()
+                    .frame(width: 783)
+                HStack {
+                    //Paintings available to be coloured
+                    //I have to create a struct for images like the professors app, so I can make the code cleaner and manage all the future paintings by 1 single struct and not changing manually everytime
+                    Paintings(image: "1.2", colouredImage: "1")
+                    
+                    Paintings(image: "1.3", colouredImage: "7")
+                    
+                    Paintings(image: "1.16", colouredImage: "11")
+                }
                 
                 HStack {
-                    Circle()
-                        .fill(Color(red: 245 / 255, green: 242 / 255, blue: 242 / 255))
-                        .frame(width: 98, height: 98)
-                        .overlay(Text("🐵")
-                            .font(.system(size: 54.02)))
-                        .padding(.trailing, 50)
+                    Paintings(image: "1.14", colouredImage: "9")
+                    
+                    Paintings(image: "1.15", colouredImage: "10")
+                    
+                    Paintings(image: "1.11", colouredImage: "2")
                 }
-            }
-            Divider()
-                .frame(width: 783)
-            HStack {
-                //Paintings available to be coloured
-                //I have to create a struct for images like the professors app, so I can make the code cleaner and manage all the future paintings by 1 single struct and not changing manually everytime
-                Paintings(image: "1.2", colouredImage: "1")
                 
-                Paintings(image: "1.3", colouredImage: "7")
-                
-                Paintings(image: "1.16", colouredImage: "11")
-            }
-            
-            HStack {
-                Paintings(image: "1.14", colouredImage: "9")
-                
-                Paintings(image: "1.15", colouredImage: "10")
-                
-                Paintings(image: "1.11", colouredImage: "2")
-            }
-            
-            HStack {
-                Paintings(image: "1.17", colouredImage: "6")
-                
-                Paintings(image: "1.12", colouredImage: "3")
-                
-                Paintings(image: "1.13", colouredImage: "4")
+                HStack {
+                    Paintings(image: "1.17", colouredImage: "6")
+                    
+                    Paintings(image: "1.12", colouredImage: "3")
+                    
+                    Paintings(image: "1.13", colouredImage: "4")
+                }
             }
         }
     }
