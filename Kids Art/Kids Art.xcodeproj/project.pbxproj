@@ -19,12 +19,11 @@
 		3376E1492A0BD9DE005C3E1C /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376E1482A0BD9DE005C3E1C /* ExploreView.swift */; };
 		3376E14D2A0BDA1D005C3E1C /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376E14C2A0BDA1D005C3E1C /* FriendsView.swift */; };
 		3376E14F2A0BDA33005C3E1C /* DailyChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376E14E2A0BDA33005C3E1C /* DailyChallengeView.swift */; };
-		670E1E872A0FE39B007FB715 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670E1E862A0FE39B007FB715 /* DrawingView.swift */; };
+		670E1E872A0FE39B007FB715 /* PaintingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670E1E862A0FE39B007FB715 /* PaintingView.swift */; };
 		670E1E892A0FE458007FB715 /* Rendition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670E1E882A0FE458007FB715 /* Rendition.swift */; };
 		670E1E8C2A0FE4A0007FB715 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670E1E8B2A0FE4A0007FB715 /* CanvasView.swift */; };
 		670E1E8E2A0FE4CC007FB715 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670E1E8D2A0FE4CC007FB715 /* ShareSheet.swift */; };
 		6741E5BE2A0BF3260033ABA8 /* WelcomeRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6741E5BD2A0BF3260033ABA8 /* WelcomeRegisterView.swift */; };
-		676138DE2A1232DE00652A45 /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676138DD2A1232DE00652A45 /* ProfilePageView.swift */; };
 		676138E22A123B0500652A45 /* ProfilePageColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676138E12A123B0500652A45 /* ProfilePageColorView.swift */; };
 		67B4869B2A106F5200F76EEE /* DrawingSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4869A2A106F5200F76EEE /* DrawingSessionView.swift */; };
 		67B4869D2A10706700F76EEE /* MyPaintingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4869C2A10706700F76EEE /* MyPaintingsView.swift */; };
@@ -64,12 +63,11 @@
 		3376E1482A0BD9DE005C3E1C /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		3376E14C2A0BDA1D005C3E1C /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 		3376E14E2A0BDA33005C3E1C /* DailyChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallengeView.swift; sourceTree = "<group>"; };
-		670E1E862A0FE39B007FB715 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		670E1E862A0FE39B007FB715 /* PaintingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingView.swift; sourceTree = "<group>"; };
 		670E1E882A0FE458007FB715 /* Rendition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rendition.swift; sourceTree = "<group>"; };
 		670E1E8B2A0FE4A0007FB715 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		670E1E8D2A0FE4CC007FB715 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		6741E5BD2A0BF3260033ABA8 /* WelcomeRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRegisterView.swift; sourceTree = "<group>"; };
-		676138DD2A1232DE00652A45 /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		676138E12A123B0500652A45 /* ProfilePageColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageColorView.swift; sourceTree = "<group>"; };
 		67B4869A2A106F5200F76EEE /* DrawingSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingSessionView.swift; sourceTree = "<group>"; };
 		67B4869C2A10706700F76EEE /* MyPaintingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPaintingsView.swift; sourceTree = "<group>"; };
@@ -131,10 +129,9 @@
 				332EC4D92A094D8400C1AEE0 /* ContentView.swift */,
 				3304D7252A0CDB94002A8172 /* DashboardView.swift */,
 				3376E1482A0BD9DE005C3E1C /* ExploreView.swift */,
-				676138DD2A1232DE00652A45 /* ProfilePageView.swift */,
 				67B4869A2A106F5200F76EEE /* DrawingSessionView.swift */,
 				670E1E8A2A0FE45C007FB715 /* Models */,
-				670E1E862A0FE39B007FB715 /* DrawingView.swift */,
+				670E1E862A0FE39B007FB715 /* PaintingView.swift */,
 				670E1E8B2A0FE4A0007FB715 /* CanvasView.swift */,
 				670E1E8D2A0FE4CC007FB715 /* ShareSheet.swift */,
 				3376E14E2A0BDA33005C3E1C /* DailyChallengeView.swift */,
@@ -310,7 +307,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3376E14D2A0BDA1D005C3E1C /* FriendsView.swift in Sources */,
-				676138DE2A1232DE00652A45 /* ProfilePageView.swift in Sources */,
 				670E1E8C2A0FE4A0007FB715 /* CanvasView.swift in Sources */,
 				670E1E892A0FE458007FB715 /* Rendition.swift in Sources */,
 				332EC4DA2A094D8400C1AEE0 /* ContentView.swift in Sources */,
@@ -319,7 +315,7 @@
 				3376E14F2A0BDA33005C3E1C /* DailyChallengeView.swift in Sources */,
 				6741E5BE2A0BF3260033ABA8 /* WelcomeRegisterView.swift in Sources */,
 				332EC4D82A094D8400C1AEE0 /* Kids_ArtApp.swift in Sources */,
-				670E1E872A0FE39B007FB715 /* DrawingView.swift in Sources */,
+				670E1E872A0FE39B007FB715 /* PaintingView.swift in Sources */,
 				333E7BF42A0E34C900E3976C /* RegistrationView.swift in Sources */,
 				67B4869B2A106F5200F76EEE /* DrawingSessionView.swift in Sources */,
 				676138E22A123B0500652A45 /* ProfilePageColorView.swift in Sources */,

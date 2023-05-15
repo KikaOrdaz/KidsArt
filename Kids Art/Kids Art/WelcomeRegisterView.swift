@@ -33,20 +33,6 @@ struct WelcomeRegisterView: View {
                                 
                                 RegistrationView()
                                 
-                               /* NavigationLink{
-                                    DashboardView()
-                                } label: {
-                                    
-                                    Capsule()
-                                        .fill(item.capsuleColor)
-                                        .frame(width: 520, height: 93)
-                                        .overlay(
-                                            Text(item.buttonLabel)
-                                                .font(.system(size: 20))
-                                                .fontWeight(.bold)
-                                                .foregroundColor(.white))
-                                }*/
-                                
                             } else {
                                 Image(item.imageName)
                                     .resizable()

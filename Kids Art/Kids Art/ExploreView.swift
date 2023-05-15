@@ -12,7 +12,6 @@ struct ExploreView: View {
     @State private var searchText = ""
     
     var body: some View {
-        
         NavigationStack {
             VStack{
                 Color("Background")
@@ -26,17 +25,12 @@ struct ExploreView: View {
                     Spacer()
                     
                     HStack {
-                        NavigationLink {
-                            ProfilePageView()
-                        } label: {
-                            Circle()
-                                .fill(Color(red: 245 / 255, green: 242 / 255, blue: 242 / 255))
-                                .frame(width: 98, height: 98)
-                                .overlay(Text("🐵")
-                                    .font(.system(size: 54.02)))
-                                .padding(.trailing, 50)
-                        }
-                        .navigationBarBackButtonHidden(true)
+                        Circle()
+                            .fill(Color(red: 245 / 255, green: 242 / 255, blue: 242 / 255))
+                            .frame(width: 98, height: 98)
+                            .overlay(Text("🐵")
+                                .font(.system(size: 54.02)))
+                            .padding(.trailing, 50)
                     }
                 }
                 Divider()
@@ -85,7 +79,7 @@ struct ExploreView: View {
         let colouredImage: String
         var body: some View {
             NavigationLink {
-                DrawingView(image: image)
+                PaintingView(image: image, colouredImage: "")
             } label: {
                 Image(colouredImage)
                     .resizable()

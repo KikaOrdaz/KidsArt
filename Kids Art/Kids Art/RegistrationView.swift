@@ -62,7 +62,6 @@ struct RegistrationView: View {
 
                 }
                 .disabled(username.isEmpty)
-  
             }
             
         }

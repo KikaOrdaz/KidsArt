@@ -8,12 +8,27 @@
 import SwiftUI
 import PencilKit
 
-struct DrawingView: View {
+struct PaintingView: View {
     var image: String
+    var colouredImage: String
+    @AppStorage("paintSave") var paintSaving: Data?
+    @State var paintSaved: [String : Data] = [:]
     
     @State var rendition: Rendition?
     @State private var canvasView = PKCanvasView()
     @State private var isSharing = false
+    
+    init(image: String, colouredImage: String) {
+        self.image = image
+        self.colouredImage = colouredImage
+        if let data = paintSaving {
+            let p = try! JSONDecoder().decode([String : Data].self, from: data)
+            if p.keys.contains(image) {
+                canvasView.drawing = try! PKDrawing(data: p[image]!)
+            }
+            _paintSaved = State(initialValue: p)
+        }
+    }
     
     var body: some View {
         NavigationStack {
@@ -26,7 +41,6 @@ struct DrawingView: View {
                     }
                 }
                     .padding(20.0)
-                    .navigationBarTitle(Text("Draw your painting"), displayMode: .inline)
                     .navigationBarItems(
                         trailing: HStack {
                             Button(action: shareDrawing) {
@@ -36,6 +50,14 @@ struct DrawingView: View {
                                     activityItems: [rendition?.image as Any],
                                     excludedActivityTypes: [])
                             }
+                            Button(action: {
+                                let data = canvasView.drawing.dataRepresentation()
+                                var paintSaved2 = paintSaved
+                                paintSaved[image] = data
+                                
+                            }, label: {
+                                Text("Save")
+                            })
                             Button(action: restoreDrawing) {
                                 Image(systemName: "arrow.uturn.left")
                             }
@@ -43,11 +65,17 @@ struct DrawingView: View {
                                 Image(systemName: "trash")
                             }
                         })
-        }.navigationViewStyle(StackNavigationViewStyle())
+                    .navigationViewStyle(StackNavigationViewStyle())
+        }
+            .onChange(of: paintSaved) {
+                
+                self.paintSaving = try! JSONEncoder().encode($0)
+            }
+            
     }
 }
 
-private extension DrawingView {
+private extension PaintingView {
     
     func saveDrawing() {
         let image = canvasView.drawing.image(
@@ -76,8 +104,8 @@ private extension DrawingView {
     }
 }
 
-struct DrawingView_Previews: PreviewProvider {
+struct PaintingView_Previews: PreviewProvider {
     static var previews: some View {
-        DrawingView(image: "1.3")
+        PaintingView(image: "1.3", colouredImage: "")
     }
 }

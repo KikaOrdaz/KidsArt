@@ -57,7 +57,7 @@ struct DashboardView: View {
                     HStack(){
                         
                         NavigationLink{
-                            DrawingView(image: "1.3")
+                            PaintingView(image: "", colouredImage: "")
                                 .navigationBarBackButtonHidden(false)
                         } label: {
                             Rectangle()
