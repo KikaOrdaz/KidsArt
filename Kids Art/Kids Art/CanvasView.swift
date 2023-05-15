@@ -9,7 +9,6 @@ import SwiftUI
 import PencilKit
 
 struct CanvasView {
-    @State private var zoomScale: CGFloat = 1.0
     @Binding var canvasView: PKCanvasView
     let onSaved: () -> Void
     @State var toolPicker = PKToolPicker()

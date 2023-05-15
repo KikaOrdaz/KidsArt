@@ -22,7 +22,7 @@
 		337A81D32A1287060047AEFC /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337A81D12A1287060047AEFC /* EditProfileView.swift */; };
 		337A81D42A1287060047AEFC /* EditProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337A81D22A1287060047AEFC /* EditProfilePictureView.swift */; };
 		337A81D62A1287140047AEFC /* ProfilePageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337A81D52A1287140047AEFC /* ProfilePageColor.swift */; };
-		670E1E872A0FE39B007FB715 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670E1E862A0FE39B007FB715 /* DrawingView.swift */; };
+		670E1E872A0FE39B007FB715 /* PaintingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670E1E862A0FE39B007FB715 /* PaintingView.swift */; };
 		670E1E892A0FE458007FB715 /* Rendition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670E1E882A0FE458007FB715 /* Rendition.swift */; };
 		670E1E8C2A0FE4A0007FB715 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670E1E8B2A0FE4A0007FB715 /* CanvasView.swift */; };
 		670E1E8E2A0FE4CC007FB715 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670E1E8D2A0FE4CC007FB715 /* ShareSheet.swift */; };
@@ -70,7 +70,7 @@
 		337A81D12A1287060047AEFC /* EditProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		337A81D22A1287060047AEFC /* EditProfilePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfilePictureView.swift; sourceTree = "<group>"; };
 		337A81D52A1287140047AEFC /* ProfilePageColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageColor.swift; sourceTree = "<group>"; };
-		670E1E862A0FE39B007FB715 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		670E1E862A0FE39B007FB715 /* PaintingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingView.swift; sourceTree = "<group>"; };
 		670E1E882A0FE458007FB715 /* Rendition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rendition.swift; sourceTree = "<group>"; };
 		670E1E8B2A0FE4A0007FB715 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		670E1E8D2A0FE4CC007FB715 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 				337A81D12A1287060047AEFC /* EditProfileView.swift */,
 				67B4869A2A106F5200F76EEE /* DrawingSessionView.swift */,
 				670E1E8A2A0FE45C007FB715 /* Models */,
-				670E1E862A0FE39B007FB715 /* DrawingView.swift */,
+				670E1E862A0FE39B007FB715 /* PaintingView.swift */,
 				670E1E8B2A0FE4A0007FB715 /* CanvasView.swift */,
 				670E1E8D2A0FE4CC007FB715 /* ShareSheet.swift */,
 				3376E14E2A0BDA33005C3E1C /* DailyChallengeView.swift */,
@@ -331,7 +331,7 @@
 				3376E14F2A0BDA33005C3E1C /* DailyChallengeView.swift in Sources */,
 				6741E5BE2A0BF3260033ABA8 /* WelcomeRegisterView.swift in Sources */,
 				332EC4D82A094D8400C1AEE0 /* Kids_ArtApp.swift in Sources */,
-				670E1E872A0FE39B007FB715 /* DrawingView.swift in Sources */,
+				670E1E872A0FE39B007FB715 /* PaintingView.swift in Sources */,
 				333E7BF42A0E34C900E3976C /* RegistrationView.swift in Sources */,
 				67B4869B2A106F5200F76EEE /* DrawingSessionView.swift in Sources */,
 				676138E22A123B0500652A45 /* ProfilePageColorView.swift in Sources */,
@@ -491,7 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kids Art/Preview Content\"";
-				DEVELOPMENT_TEAM = 3V97GU3CCY;
+				DEVELOPMENT_TEAM = T3AS82C873;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -528,7 +528,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kids Art/Preview Content\"";
-				DEVELOPMENT_TEAM = 3V97GU3CCY;
+				DEVELOPMENT_TEAM = T3AS82C873;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;

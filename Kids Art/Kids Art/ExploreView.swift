@@ -87,7 +87,7 @@ struct ExploreView: View {
         let colouredImage: String
         var body: some View {
             NavigationLink {
-                DrawingView(image: image)
+                PaintingView(image: image, colouredImage: "")
             } label: {
                 Image(colouredImage)
                     .resizable()

@@ -18,7 +18,7 @@ struct DrawingSessionView: View {
     var body: some View {
                 ZoomableScrollView {
                     CanvasView(canvasView: $canvasView, onSaved: saveDrawing)
-                        .padding(20.0)
+                        .aspectRatio(contentMode: .fill)
                         .navigationBarItems(
                             trailing: HStack {
                                 Button(action: shareDrawing) {
