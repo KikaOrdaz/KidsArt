@@ -33,7 +33,6 @@ struct WelcomeRegisterView: View {
                                 
                                 RegistrationView()
                                 
-                                
                             } else {
                                 Image(item.imageName)
                                     .resizable()
