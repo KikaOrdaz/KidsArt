@@ -10,9 +10,12 @@ import SwiftUI
 struct ExploreView: View {
     //To do: drop a list with the paintings' titles
     @State private var searchText = ""
+    @AppStorage("profilepic") var profilePic: String?
+    @AppStorage("profilecolor") var profileColor: String?
     
     var body: some View {
-        NavigationStack {
+        NavigationStack{
+
             VStack{
                 Color("Background")
                     .edgesIgnoringSafeArea(.all)
@@ -25,12 +28,16 @@ struct ExploreView: View {
                     Spacer()
                     
                     HStack {
-                        Circle()
-                            .fill(Color(red: 245 / 255, green: 242 / 255, blue: 242 / 255))
-                            .frame(width: 98, height: 98)
-                            .overlay(Text("🐵")
-                                .font(.system(size: 54.02)))
-                            .padding(.trailing, 50)
+                        NavigationLink{
+                            EditProfileView()
+                        } label: {
+                            Circle()
+                                .fill(stringToColor(string: profileColor ?? ""))
+                                .frame(width: 98, height: 98)
+                                .overlay(Text(profilePic ?? "🐵")
+                                    .font(.system(size: 54.02)))
+                                .padding(.trailing, 50)
+                        }
                     }
                 }
                 Divider()
@@ -62,6 +69,7 @@ struct ExploreView: View {
                 }
             }
         }
+        
     }
     
     
@@ -79,7 +87,7 @@ struct ExploreView: View {
         let colouredImage: String
         var body: some View {
             NavigationLink {
-                PaintingView(image: image, colouredImage: "")
+                DrawingView(image: image)
             } label: {
                 Image(colouredImage)
                     .resizable()
