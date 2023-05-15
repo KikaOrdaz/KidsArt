@@ -67,8 +67,8 @@ struct WelcomeRegisterView: View {
                     
                 }
             }
-            .tabViewStyle(.page)
-            .indexViewStyle(.page(backgroundDisplayMode: .never))
+            .tabViewStyle(.page(indexDisplayMode: .always))
+            .indexViewStyle(.page(backgroundDisplayMode: .always))
         }
         .navigationBarBackButtonHidden(true)
     }

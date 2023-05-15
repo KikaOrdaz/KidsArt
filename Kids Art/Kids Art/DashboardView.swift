@@ -12,11 +12,12 @@ struct DashboardView: View {
     @AppStorage ("isDarkMode") private var isDarkMode = false
     
     var body: some View {
-        
+    
         NavigationSplitView {
             ZStack{
                 Color(red: 211 / 255, green: 216 / 255, blue: 232 / 255)
                     .ignoresSafeArea()
+                
                 
                 VStack {
                     Picker("Theme", selection: $isDarkMode) {
@@ -156,8 +157,6 @@ struct DashboardView: View {
                         .fill(.white)
                         .frame(width: 198, height: 1)
                     
-                
-                    
                     NavigationLink {
                         DrawingSessionView()
                     } label: {
@@ -178,7 +177,9 @@ struct DashboardView: View {
                                 })
                             .shadow(radius: 5)
                     }
+                    
                 }
+                
             }
         } detail: {
             ExploreView()
