@@ -50,6 +50,12 @@ struct PaintingView: View {
                                     activityItems: [rendition?.image as Any],
                                     excludedActivityTypes: [])
                             }
+                            Button(action: restoreDrawing) {
+                                Image(systemName: "trash.slash")
+                            }
+                            Button(action: deleteDrawing) {
+                                Image(systemName: "trash")
+                            }
                             Button(action: {
                                 let data = canvasView.drawing.dataRepresentation()
                                 var paintSaved2 = paintSaved
@@ -58,12 +64,6 @@ struct PaintingView: View {
                             }, label: {
                                 Text("Save")
                             })
-                            Button(action: restoreDrawing) {
-                                Image(systemName: "arrow.uturn.left")
-                            }
-                            Button(action: deleteDrawing) {
-                                Image(systemName: "trash")
-                            }
                         })
                     .navigationViewStyle(StackNavigationViewStyle())
         }
