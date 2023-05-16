@@ -21,6 +21,9 @@ struct DashboardView: View {
                 
                 ScrollView{
                     VStack {
+                        Toggle(isOn: $isDarkMode){}
+                            .toggleStyle(CustomToggleStyle()).padding()
+                        
                         NavigationLink{
                             ExploreView()
                         } label: {
@@ -117,9 +120,6 @@ struct DashboardView: View {
                             .shadow(radius: 5)
                     }
                 }
-                    }.toolbar {
-                        Toggle(isOn: $isDarkMode){}
-                            .toggleStyle(CustomToggleStyle()).padding()
                     }
                 }
         } detail: {
