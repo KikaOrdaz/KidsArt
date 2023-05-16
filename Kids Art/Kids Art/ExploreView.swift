@@ -27,18 +27,18 @@ struct ExploreView: View {
                     
                     Spacer()
                     
-                    HStack {
-                        NavigationLink{
-                            EditProfileView()
-                        } label: {
-                            Circle()
-                                .fill(stringToColor(string: profileColor ?? ""))
-                                .frame(width: 98, height: 98)
-                                .overlay(Text(profilePic ?? "🐵")
-                                    .font(.system(size: 54.02)))
-                                .padding(.trailing, 50)
-                        }
-                    }
+//                    HStack {
+//                        NavigationLink{
+//                            EditProfileView()
+//                        } label: {
+//                            Circle()
+//                                .fill(stringToColor(string: profileColor ?? ""))
+//                                .frame(width: 98, height: 98)
+//                                .overlay(Text(profilePic ?? "🐵")
+//                                    .font(.system(size: 54.02)))
+//                                .padding(.trailing, 50)
+//                        }
+//                    }
                 }
                 Divider()
                     .frame(width: 783)
