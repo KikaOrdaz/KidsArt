@@ -37,7 +37,7 @@ struct ShareSheet: UIViewControllerRepresentable {
 struct ShareSheet_Previews: PreviewProvider {
   static var previews: some View {
     let theShareSheet = ShareSheet(
-      activityItems: ["A preview string" as NSString],
+      activityItems: ["Save your painting" as NSString],
       excludedActivityTypes: [UIActivity.ActivityType.airDrop])
     return theShareSheet
   }

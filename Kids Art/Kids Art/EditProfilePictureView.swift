@@ -16,7 +16,6 @@ struct EditProfilePictureView: View {
                 TabView{
                     ProfilePageView()
                     ProfilePageColor()
-                    
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .always))

@@ -31,7 +31,6 @@ struct EditProfileView: View {
                         .padding(.top)
                    
                 }
-                
                 Text("Enter your Nickname")
                     .fontWeight(.regular)
                     .padding(.top, 25)
@@ -50,14 +49,8 @@ struct EditProfileView: View {
                     .cornerRadius(50)
                     .frame(width: 400, height: 150)
                 }
-                
-//                Text(username)
-               
             }
         }
-        
-       
-
     }
 }
 

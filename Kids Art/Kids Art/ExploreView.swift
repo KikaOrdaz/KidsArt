@@ -15,7 +15,6 @@ struct ExploreView: View {
     
     var body: some View {
         NavigationStack{
-
             VStack{
                 Color("Background")
                     .edgesIgnoringSafeArea(.all)
@@ -95,6 +94,7 @@ struct ExploreView: View {
                     .frame(width: 300,height: 200)
                     .cornerRadius(25)
             }
+            .navigationBarBackButtonHidden(true)
         }
     }
 }

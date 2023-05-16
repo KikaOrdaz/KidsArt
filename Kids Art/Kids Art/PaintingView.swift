@@ -51,7 +51,7 @@ struct PaintingView: View {
                                     excludedActivityTypes: [])
                             }
                             Button(action: restoreDrawing) {
-                                Image(systemName: "arrow.uturn.left")
+                                Image(systemName: "trash.slash")
                             }
                             Button(action: deleteDrawing) {
                                 Image(systemName: "trash")
