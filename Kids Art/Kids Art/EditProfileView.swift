@@ -83,9 +83,6 @@ struct EditProfileView: View {
                                 .fontWeight(.light)
                                 .foregroundColor(.white))
                 })
-//                .offset(x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 100.0)
-                
-               
             }
         }
     }

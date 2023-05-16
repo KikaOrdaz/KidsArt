@@ -20,7 +20,7 @@ struct WelcomeRegisterView: View {
         
         let infos : [pageInfo] = [pageInfo(buttonLabel: "Choose your favorite painting", imageName: "Choose", capsuleColor: notClickableColor),
                                   pageInfo(buttonLabel: "Color your favorite painting", imageName: "Paint", capsuleColor: notClickableColor),
-                                  pageInfo(buttonLabel: "Share it with your friends", imageName: "Friends", capsuleColor: notClickableColor),
+                                  pageInfo(buttonLabel: "Draw free hand", imageName: "Friends", capsuleColor: notClickableColor),
                                   pageInfo(buttonLabel: "Start painting!", imageName: "", capsuleColor: clickableColor)]
         
         NavigationStack {
