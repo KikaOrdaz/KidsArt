@@ -14,122 +14,91 @@ struct DashboardView: View {
     var body: some View {
         
         NavigationSplitView {
+            
             ZStack{
                 Color(red: 211 / 255, green: 216 / 255, blue: 232 / 255)
                     .ignoresSafeArea()
                 
-                
-                VStack {
-                    Picker("Theme", selection: $isDarkMode) {
-                        Text("☀️")
-                            .tag(false)
-                        Text("🌑")
-                            .tag(true)
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .padding()
-                    
-                    NavigationLink{
-                        ExploreView()
-                    } label: {
-                        Rectangle()
-                            .fill(Color(red: 255 / 255, green: 149 / 255, blue: 0 / 255))
-                            .frame(width: 254.25, height: 104.15)
-                            .cornerRadius(10)
-                            .overlay(
-                                VStack{
-                                    Text("🗺️")
-                                        .font(.system(size : 53.37))
-                                    
-                                    Text("Explore")
-                                        .font(.system(size : 12.32))
-                                        .foregroundColor(.white)
-                                })
-                            .shadow(radius: 5)
-                    }
-                    
-                    Rectangle()
-                        .fill(.white)
-                        .frame(width: 198, height: 1)
-                    
-                    HStack(){
+                ScrollView{
+                    VStack {
                         NavigationLink{
-                            
-                            PaintingView(image: "1.3", colouredImage: "")
-                            
-                                .navigationBarBackButtonHidden(false)
+                            ExploreView()
                         } label: {
                             Rectangle()
-                                .fill(Color(red: 0 / 255, green: 122 / 255, blue: 255 / 255))
-                                .frame(width: 123, height: 106.45)
+                                .fill(Color(red: 255 / 255, green: 149 / 255, blue: 0 / 255))
+                                .frame(width: 254.25, height: 104.15)
                                 .cornerRadius(10)
-                                .overlay(
-                                    VStack {
-                                        //Added a navigation link both for the emoji symbol and the "label", I've done it for each section (excluded the profile section that needs to be reworked)
-                                        Text("🖌️")
+                                .overlay(VStack{
+                                        Text("🗺️")
                                             .font(.system(size : 53.37))
                                         
-                                        Text("Artwork")
-                                            .font(.system(size : 12.32))
-                                            .fontWeight(.semibold)
-                                            .foregroundColor(.white)
-                                        
-                                    })
+                                        Text("Explore")
+                                        .font(.system(size : 12.32))
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.white)
+                                })
                                 .shadow(radius: 5)
                         }
                         
-                        NavigationLink{
-                            DailyChallengeView(image: "")
-                        } label: {
-                            Rectangle()
-                                .fill(Color(red: 266 / 255, green: 78 / 255, blue: 68 / 255))
-                                .frame(width: 123, height: 106.45)
-                                .cornerRadius(10)
-                                .overlay(
-                                    VStack {
-                                        Text("🔥")
-                                            .font(.system(size : 53.37))
-                                        
-                                        Text("Daily Challenge")
-                                            .font(.system(size : 12.32))
-                                            .foregroundColor(.white)
-                                    })
-                                .shadow(radius: 5)
-                        }
-                    }
                     
-                    Rectangle()
-                        .fill(.white)
-                        .frame(width: 198, height: 1)
-                    
-                    NavigationLink {
-                        MyPaintingsView()
-                    } label: {
+                        
                         Rectangle()
-                            .fill(Color(red: 234 / 255, green: 152 / 255, blue: 106 / 255))
-                            .frame(width: 254.25, height: 104.15)
-                            .cornerRadius(10)
-                            .overlay(
-                                VStack{
-                                    Text("🌄")
-                                        .font(.system(size : 50))
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.white)
-                                    Text("My Paintings")
-                                        .font(.system(size : 12.32))
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.white)
-                                })
-                            .shadow(radius: 5)
-                    }
-                    
+                            .fill(.white)
+                            .frame(width: 198, height: 1)
+
+                        
+                        HStack(){
+                            NavigationLink{
+                                PaintingView(image: "1.3", colouredImage: "")
+                                    .navigationBarBackButtonHidden(false)
+                            } label: {
+                                Rectangle()
+                                    .fill(Color(red: 0 / 255, green: 122 / 255, blue: 255 / 255))
+                                    .frame(width: 123, height: 106.45)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        VStack {
+                                            //Added a navigation link both for the emoji symbol and the "label", I've done it for each section (excluded the profile section that needs to be reworked)
+                                            Text("🖌️")
+                                                .font(.system(size : 53.37))
+                                            
+                                            Text("Artwork")
+                                            .font(.system(size : 12.32))
+                                            .fontWeight(.semibold)
+                                            .foregroundColor(.white)
+                                           
+                                        })
+                                    .shadow(radius: 5)
+                            }
+                            
+                            NavigationLink{
+                                DailyChallengeView(image: "")
+                            } label: {
+                                Rectangle()
+                                    .fill(Color(red: 266 / 255, green: 78 / 255, blue: 68 / 255))
+                                    .frame(width: 123, height: 106.45)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        VStack {
+                                            Text("🔥")
+                                                .font(.system(size : 53.37))
+                                          
+                                            Text("Daily Challenge")
+                                                .font(.system(size : 12.32))
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(.white)
+                                        })
+                                    .shadow(radius: 5)
+                            }
+                        }
+                        
                     Rectangle()
                         .fill(.white)
                         .frame(width: 198, height: 1)
                     
                     NavigationLink {
                         DrawingSessionView()
-                    } label: {
+                       } label: {
                         Rectangle()
                             .fill(Color(red: 234 / 255, green: 152 / 255, blue: 106 / 255))
                             .frame(width: 254.25, height: 104.15)
@@ -148,11 +117,16 @@ struct DashboardView: View {
                             .shadow(radius: 5)
                     }
                 }
-            }
+                    }.toolbar {
+                        Toggle(isOn: $isDarkMode){}
+                            .toggleStyle(CustomToggleStyle()).padding()
+                    }
+                }
         } detail: {
             ExploreView()
         }
-        .navigationBarBackButtonHidden(true)    }
+        .navigationBarBackButtonHidden(true)
+    }
 }
 
 struct DashboardView_Previews: PreviewProvider {
@@ -160,3 +134,36 @@ struct DashboardView_Previews: PreviewProvider {
         DashboardView()
     }
 }
+
+struct CustomToggleStyle: ToggleStyle {
+    
+    func makeBody(configuration: Configuration) -> some View {
+        HStack {
+            configuration.label
+            
+            Spacer()
+            
+            RoundedRectangle(cornerRadius: 30)
+                .fill(configuration.isOn ? Color(.systemGray) : Color(.systemGray5))
+                .overlay {
+                    Circle()
+                        .fill(.white)
+                        .padding(3)
+                        .overlay {
+                            Text(configuration.isOn ? "🌚" : "🌞")
+                                .foregroundColor(configuration.isOn ? Color(.systemGray) : Color(.systemGray5))
+                        }
+                        .offset(x: configuration.isOn ? 10 : -10)
+                }
+            
+                .frame(width: 50, height: 32)
+                .onTapGesture {
+                    withAnimation(.spring()) {
+                        configuration.isOn.toggle()
+                    }
+                }
+            
+        }
+    }
+}
+                                
