@@ -17,7 +17,6 @@
 		332EC4F62A094D8600C1AEE0 /* Kids_ArtUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332EC4F52A094D8600C1AEE0 /* Kids_ArtUITestsLaunchTests.swift */; };
 		333E7BF42A0E34C900E3976C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333E7BF32A0E34C900E3976C /* RegistrationView.swift */; };
 		3376E1492A0BD9DE005C3E1C /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376E1482A0BD9DE005C3E1C /* ExploreView.swift */; };
-		3376E14D2A0BDA1D005C3E1C /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376E14C2A0BDA1D005C3E1C /* FriendsView.swift */; };
 		3376E14F2A0BDA33005C3E1C /* DailyChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376E14E2A0BDA33005C3E1C /* DailyChallengeView.swift */; };
 		670E1E872A0FE39B007FB715 /* PaintingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670E1E862A0FE39B007FB715 /* PaintingView.swift */; };
 		670E1E892A0FE458007FB715 /* Rendition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670E1E882A0FE458007FB715 /* Rendition.swift */; };
@@ -61,7 +60,6 @@
 		332EC4F52A094D8600C1AEE0 /* Kids_ArtUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kids_ArtUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		333E7BF32A0E34C900E3976C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		3376E1482A0BD9DE005C3E1C /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
-		3376E14C2A0BDA1D005C3E1C /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 		3376E14E2A0BDA33005C3E1C /* DailyChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallengeView.swift; sourceTree = "<group>"; };
 		670E1E862A0FE39B007FB715 /* PaintingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingView.swift; sourceTree = "<group>"; };
 		670E1E882A0FE458007FB715 /* Rendition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rendition.swift; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 			children = (
 				332EC4D72A094D8400C1AEE0 /* Kids_ArtApp.swift */,
 				67B4869C2A10706700F76EEE /* MyPaintingsView.swift */,
-				3376E14C2A0BDA1D005C3E1C /* FriendsView.swift */,
 				6741E5BD2A0BF3260033ABA8 /* WelcomeRegisterView.swift */,
 				333E7BF32A0E34C900E3976C /* RegistrationView.swift */,
 				332EC4D92A094D8400C1AEE0 /* ContentView.swift */,
@@ -306,7 +303,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3376E14D2A0BDA1D005C3E1C /* FriendsView.swift in Sources */,
 				670E1E8C2A0FE4A0007FB715 /* CanvasView.swift in Sources */,
 				670E1E892A0FE458007FB715 /* Rendition.swift in Sources */,
 				332EC4DA2A094D8400C1AEE0 /* ContentView.swift in Sources */,

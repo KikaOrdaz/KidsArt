@@ -17,7 +17,7 @@ struct ContentView: View {
             if(username.isEmpty) {
                 ZStack {
                     Color(red: 32 / 255, green: 70 / 255, blue: 207 / 255)
-                        .edgesIgnoringSafeArea(.bottom)
+                        .edgesIgnoringSafeArea(.all)
                     
                     VStack {
                             Image("Font bianco app")
