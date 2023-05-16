@@ -80,7 +80,7 @@ struct DashboardView: View {
                         }
                         
                         NavigationLink{
-                            DailyChallengeView()
+                            DailyChallengeView(image: "")
                         } label: {
                             Rectangle()
                                 .fill(Color(red: 266 / 255, green: 78 / 255, blue: 68 / 255))
