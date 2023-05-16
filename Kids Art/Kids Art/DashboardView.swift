@@ -20,6 +20,11 @@ struct DashboardView: View {
                 
                 
                 VStack {
+                    Image("Font bianco app")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding()
+                    
                     Picker("Theme", selection: $isDarkMode) {
                         Text("☀️")
                             .tag(false)
@@ -82,7 +87,7 @@ struct DashboardView: View {
                         }
                         
                         NavigationLink{
-                            DailyChallengeView()
+                            DailyChallengeView(image: "")
                         } label: {
                             Rectangle()
                                 .fill(Color(red: 266 / 255, green: 78 / 255, blue: 68 / 255))
@@ -101,60 +106,6 @@ struct DashboardView: View {
                         }
                     }
             
-                    Rectangle()
-                        .fill(.white)
-                        .frame(width: 198, height: 1)
-                    
-                
-                    
-                    NavigationLink {
-                        FriendsView()
-                    } label: {
-                        Rectangle()
-                            .fill(Color(red: 234 / 255, green: 152 / 255, blue: 106 / 255))
-                            .frame(width: 254.25, height: 104.15)
-                            .cornerRadius(10)
-                            .overlay(
-                                VStack{
-                                    Text("Your Friends' Drawings")
-                                        .font(.system(size : 12.32))
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.white)
-                                    Text("🧑🏼‍🎨🧑🏾‍🎨👩🏽‍🎨👩🏻‍🎨")
-                                        .font(.system(size : 50))
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.white)
-                                })
-                            .shadow(radius: 5)
-                    }
-                    
-                    Rectangle()
-                        .fill(.white)
-                        .frame(width: 198, height: 1)
-                    
-                
-                    
-                    NavigationLink {
-                        MyPaintingsView()
-                    } label: {
-                        Rectangle()
-                            .fill(Color(red: 234 / 255, green: 152 / 255, blue: 106 / 255))
-                            .frame(width: 254.25, height: 104.15)
-                            .cornerRadius(10)
-                            .overlay(
-                                VStack{
-                                    Text("🌄")
-                                        .font(.system(size : 50))
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.white)
-                                    Text("My Paintings")
-                                        .font(.system(size : 12.32))
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.white)
-                                })
-                            .shadow(radius: 5)
-                    }
-                    
                     Rectangle()
                         .fill(.white)
                         .frame(width: 198, height: 1)
