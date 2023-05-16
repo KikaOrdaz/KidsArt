@@ -13,13 +13,14 @@ struct EditProfileView: View {
     @State private var dataDisclaimer = false
     @State private var emptyUsername = false
     
+    
     @AppStorage("profilepic") var selectedImage: String?
     @AppStorage("profilecolor") var profileColor: String?
     
     
     var body: some View {
         NavigationStack{
-            VStack{
+            VStack(alignment: .center){
                 NavigationLink{
                     EditProfilePictureView()
                 } label: {
@@ -31,7 +32,13 @@ struct EditProfileView: View {
                         .padding(.top)
                    
                 }
-                Text("Enter your Nickname")
+                
+                Text(username)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.top, 25)
+                
+                Text("Change your Nickname")
                     .fontWeight(.regular)
                     .padding(.top, 25)
                 Divider()
@@ -40,7 +47,7 @@ struct EditProfileView: View {
                 
                 Button() {
                 } label: {
-                    TextField(text: $username, label: {
+                    TextField(text: $savedUsername, label: {
                         Text("Nickname")
                     })
                     .padding()
@@ -49,6 +56,36 @@ struct EditProfileView: View {
                     .cornerRadius(50)
                     .frame(width: 400, height: 150)
                 }
+                
+                Button(action: {
+                    username = savedUsername
+                }, label: {
+                    Capsule()
+                        .fill()
+                        .frame(width: 125, height: 70)
+                        .overlay(
+                            Text("Save")
+                                .font(.system(size: 20))
+                                .fontWeight(.bold)
+                                .foregroundColor(.white))
+                })
+                .disabled(savedUsername.isEmpty)
+                
+                Button(action: {
+                    username = ""
+                }, label: {
+                    Capsule()
+                        .fill(.red)
+                        .frame(width: 175, height: 50)
+                        .overlay(
+                            Text("Reset Account")
+                                .font(.system(size: 20))
+                                .fontWeight(.light)
+                                .foregroundColor(.white))
+                })
+//                .offset(x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 100.0)
+                
+               
             }
         }
     }

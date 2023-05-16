@@ -35,7 +35,7 @@ struct RegistrationView: View {
                 Button() {
                     dataDisclaimer = true
                 } label: {
-                    TextField(text: $savedUsername, label: {
+                    TextField(text: $username, label: {
                         Text("Nickname")
                     })
                     .padding()
@@ -62,12 +62,7 @@ struct RegistrationView: View {
                                 .foregroundColor(.white))
 
                 }
-                .disabled(savedUsername.isEmpty)
-                .onTapGesture {
-                    username = savedUsername
-                }
-                
-  
+                .disabled(username.isEmpty)
             }
             
         }
@@ -81,4 +76,3 @@ struct RegistrationView_Previews: PreviewProvider {
         RegistrationView()
     }
 }
-
