@@ -43,13 +43,13 @@ struct PaintingView: View {
                     .padding(20.0)
                     .navigationBarItems(
                         trailing: HStack {
-                            Button(action: shareDrawing) {
-                                Image(systemName: "square.and.arrow.up")
-                            }.sheet(isPresented: $isSharing) {
-                                ShareSheet(
-                                    activityItems: [rendition?.image as Any],
-                                    excludedActivityTypes: [])
-                            }
+//                            Button(action: shareDrawing) {
+//                                Image(systemName: "square.and.arrow.up")
+//                            }.sheet(isPresented: $isSharing) {
+//                                ShareSheet(
+//                                    activityItems: [rendition?.image as Any],
+//                                    excludedActivityTypes: [])
+//                            }
                             Button(action: restoreDrawing) {
                                 Image(systemName: "trash.slash")
                             }

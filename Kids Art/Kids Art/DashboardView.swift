@@ -24,6 +24,11 @@ struct DashboardView: View {
                         Toggle(isOn: $isDarkMode){}
                             .toggleStyle(CustomToggleStyle()).padding()
                         
+                        Image("Font bianco app")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding()
+                        
                         NavigationLink{
                             ExploreView()
                         } label: {
